@@ -1,12 +1,23 @@
-<script setup>
-import monthListing from "../componets/monthListing.vue";
+<script setup lang="ts">
+import monthListing from "../components/monthListing.vue";
+import { ref } from "vue";
+import { Month } from "./monthStructure";
+
+const emit = defineEmits({update(value: Month) });
+const monthValues = ref({} as Month);
+
+const monthNameParts = ref(['', '', '']);
 </script>
 
 <template>
     <div class="">
         <span>
             <label class="pr-2 align-top">Month</label>
-            <select size="6" class="mr-1 border w-15">
+            <select
+                size="6"
+                v-model="monthNameParts[0]"
+                class="mr-1 border w-15"
+            >
                 <option>j</option>
                 <option>nov</option>
                 <option>dec</option>
@@ -14,7 +25,11 @@ import monthListing from "../componets/monthListing.vue";
                 <option>m</option>
                 <option>sept</option>
             </select>
-            <select size="6" class="mr-1 border w-15">
+            <select
+                size="6"
+                v-model="monthNameParts[1]"
+                class="mr-1 border w-15"
+            >
                 <option>octo</option>
                 <option>em</option>
                 <option>uly</option>
@@ -22,7 +37,11 @@ import monthListing from "../componets/monthListing.vue";
                 <option>une</option>
                 <option>an</option>
             </select>
-            <select size="6" class="mr-1 border w-15">
+            <select
+                size="6"
+                v-model="monthNameParts[3]"
+                class="mr-1 border w-15"
+            >
                 <option>ber</option>
                 <option>y</option>
                 <option>unary</option>
@@ -37,5 +56,8 @@ import monthListing from "../componets/monthListing.vue";
             <label class="p-1 pr-5">day</label>
             <input type="number" class="border p-1 w-10" value="0" />
         </span>
+    </div>
+    <div class="card-actions justify-end m-2">
+        <button class="btn btn-primary">Save</button>
     </div>
 </template>

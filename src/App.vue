@@ -8,7 +8,9 @@ import { ref } from "vue";
 // import { invoke } from "@tauri-apps/api/core";
 
 let selctedYear = ref(0);
-let monthCollection: Month[] = [{ month: "Amazon", days: 10 }];
+let monthCollection: Month[] = [{} as Month];
+
+function savingMonthEntry() {}
 </script>
 
 <template>
@@ -22,9 +24,6 @@ let monthCollection: Month[] = [{ month: "Amazon", days: 10 }];
             <YearSilder v-model="selctedYear" />
             <div class="divider"></div>
             <CreatorBody />
-            <div class="card-actions justify-end m-2">
-                <button class="btn btn-primary">Save</button>
-            </div>
         </div>
 
         <div class="card bg-base-100 w-96 shadow-sm pl-2">
