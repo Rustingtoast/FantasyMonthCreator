@@ -1,12 +1,27 @@
 <script setup lang="ts">
-import monthListing from "../components/monthListing.vue";
 import { ref } from "vue";
 import { Month } from "./monthStructure";
 
-const emit = defineEmits({update(value: Month) });
-const monthValues = ref({} as Month);
+const emit = defineEmits({
+    update(month: Month) {},
+});
+const monthNameParts = ref(["", "", ""]);
+const selectedDays = ref(0);
 
-const monthNameParts = ref(['', '', '']);
+function SaveAndUpload() {
+    monthNameParts.value.forEach((element) => {
+        if (!element) {
+            element = "";
+        }
+    });
+
+    const days = selectedDays.value;
+    const fullMonthName: string = `${monthNameParts.value[0] + monthNameParts.value[1] + monthNameParts.value[0]}`;
+    const thunder: Month = { month: fullMonthName, days: days };
+
+    console.log("Saving Event Executed");
+    emit("update", thunder);
+}
 </script>
 
 <template>
@@ -54,10 +69,14 @@ const monthNameParts = ref(['', '', '']);
     <div class="pt-2">
         <span>
             <label class="p-1 pr-5">day</label>
-            <input type="number" class="border p-1 w-10" value="0" />
+            <input
+                type="number"
+                class="border p-1 w-10"
+                :value="selectedDays"
+            />
         </span>
     </div>
     <div class="card-actions justify-end m-2">
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" @click="SaveAndUpload()">Save</button>
     </div>
 </template>

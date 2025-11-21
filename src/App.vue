@@ -8,9 +8,11 @@ import { ref } from "vue";
 // import { invoke } from "@tauri-apps/api/core";
 
 let selctedYear = ref(0);
-let monthCollection: Month[] = [{} as Month];
+let monthCollection = ref([{} as Month]);
 
-function savingMonthEntry() {}
+function savingMonthEntry(addedMonth: Month) {
+    monthCollection.value.push(addedMonth);
+}
 </script>
 
 <template>
@@ -23,7 +25,7 @@ function savingMonthEntry() {}
             <div class="card-title">Creator</div>
             <YearSilder v-model="selctedYear" />
             <div class="divider"></div>
-            <CreatorBody />
+            <CreatorBody @update="" />
         </div>
 
         <div class="card bg-base-100 w-96 shadow-sm pl-2">
