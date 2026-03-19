@@ -1,18 +1,18 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "fantasymonthcreator",
+  "productName": "fantasymonthcreatorrework",
   "version": "0.1.0",
-  "identifier": "com.vscode.fantasymonthcreator",
+  "identifier": "com.vscode.fantasymonthcreatorrework",
   "build": {
     "beforeDevCommand": "deno task dev",
-    "devUrl": "http://localhost:1420",
     "beforeBuildCommand": "deno task build",
-    "frontendDist": "../dist"
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../build"
   },
   "app": {
     "windows": [
       {
-        "title": "fantasymonthcreator",
+        "title": "fantasymonthcreatorrework",
         "width": 800,
         "height": 600
       }

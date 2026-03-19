@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    fantasymonthcreator_lib::run()
+    fantasymonthcreatorrework_lib::run()
 }
