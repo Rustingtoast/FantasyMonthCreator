@@ -16,7 +16,7 @@ function SaveAndUpload() {
     });
 
     const days = selectedDays.value;
-    const fullMonthName: string = `${monthNameParts.value[0] + monthNameParts.value[1] + monthNameParts.value[0]}`;
+    const fullMonthName: string = `${monthNameParts.value[0] + monthNameParts.value[1] + monthNameParts.value[2]}`;
     const thunder: Month = { month: fullMonthName, days: days };
 
     console.log("Saving Event Executed");
@@ -54,7 +54,7 @@ function SaveAndUpload() {
             </select>
             <select
                 size="6"
-                v-model="monthNameParts[3]"
+                v-model="monthNameParts[2]"
                 class="mr-1 border w-15"
             >
                 <option>ber</option>
