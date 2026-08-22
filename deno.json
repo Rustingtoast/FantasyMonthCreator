@@ -1,1 +1,13 @@
-{}
+{
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "dev": "deno run -A npm:vite dev --host",
+    "build": "deno run -A npm:vite build",
+    "preview": "deno run -A npm:vite preview",
+    "check": "deno run -A npm:@sveltejs/kit sync && deno run -A npm:svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "deno run -A npm:@sveltejs/kit sync && deno run -A npm:svelte-check --tsconfig ./tsconfig.json --watch",
+    "tauri": "deno run -A npm:@tauri-apps/cli",
+    "tauri:dev": "deno run -A npm:@tauri-apps/cli dev",
+    "tauri:build": "deno run -A npm:@tauri-apps/cli build"
+  }
+}

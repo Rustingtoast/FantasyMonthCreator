@@ -1,7 +1,33 @@
-# Tauri + SvelteKit + TypeScript
+# Fantasy Calendar Creator (Tauri 2 + Svelte 5 + DaisyUI)
 
-This template should help get you started developing with Tauri, SvelteKit and TypeScript in Vite.
+This project now runs on:
 
-## Recommended IDE Setup
+- **SvelteKit (Svelte 5)**
+- **DaisyUI + Tailwind CSS v4**
+- **Tauri 2**
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
+## Development (Deno)
+
+```bash
+deno task dev
+```
+
+## Tauri
+
+```bash
+deno task tauri:dev
+```
+
+## Build
+
+```bash
+deno task build
+deno task tauri:build
+```
+
+## Project structure
+
+- `src/lib/components`: Svelte UI components
+- `src/lib/types`: shared TypeScript types
+- `src/routes`: SvelteKit routes/layout
+- `src-tauri`: Rust/Tauri backend
