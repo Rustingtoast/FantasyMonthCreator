@@ -9,4 +9,9 @@ RUN sudo apt install -y libwebkit2gtk-4.1-dev \
   libxdo-dev \
   libssl-dev \
   libayatana-appindicator3-dev \
-  librsvg2-dev
+  librsvg2-dev \
+  mingw-w64 \
+  llvm \
+  clang \
+  lld \
+  nsis
