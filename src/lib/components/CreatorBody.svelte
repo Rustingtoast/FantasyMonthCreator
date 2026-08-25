@@ -32,17 +32,17 @@
     </label>
 
     <div class="grid grid-cols-3 gap-2">
-      <select id="month-name-part-one" class="select select-bordered h-36" size="6" bind:value={monthNamePartOne}>
+      <select id="month-name-part-one" class="month-part-listbox" size="6" bind:value={monthNamePartOne}>
         {#each firstParts as monthPart}
           <option>{monthPart}</option>
         {/each}
       </select>
-      <select class="select select-bordered h-36" size="6" bind:value={monthNamePartTwo}>
+      <select class="month-part-listbox" size="6" bind:value={monthNamePartTwo}>
         {#each secondParts as monthPart}
           <option>{monthPart}</option>
         {/each}
       </select>
-      <select class="select select-bordered h-36" size="6" bind:value={monthNamePartThree}>
+      <select class="month-part-listbox" size="6" bind:value={monthNamePartThree}>
         {#each thirdParts as monthPart}
           <option>{monthPart}</option>
         {/each}
@@ -61,3 +61,24 @@
     <button class="btn btn-primary" onclick={saveAndUpload} disabled={!canSave}>Save</button>
   </div>
 </div>
+
+<style>
+  .month-part-listbox {
+    height: 9rem;
+    width: 100%;
+    border: 1px solid var(--color-base-300);
+    border-radius: var(--radius-selector);
+    background: var(--color-base-100);
+    color: var(--color-base-content);
+    padding: 0.25rem;
+  }
+
+  .month-part-listbox:focus {
+    outline: 2px solid color-mix(in oklab, var(--color-primary) 40%, transparent);
+    outline-offset: 1px;
+  }
+
+  .month-part-listbox option {
+    padding: 0.2rem 0.35rem;
+  }
+</style>
